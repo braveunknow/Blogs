@@ -85,10 +85,25 @@ router.post('/search', async (req, res) => {
 
 
 router.get('/about',(req,res) => {    // this is how to add new routes
+  const locals = {
+    title: 'about',
+    description: 'about page'
+  }
     res.render('about', {
+      locals,
       currentRoute: '/about'
     });
-    
+});
+
+router.get('/contact',(req,res) => {    // this is how to add new routes
+  const locals = {
+    title: 'contact',
+    description: 'contact page'
+  }
+  res.render('contact', {
+    locals,
+    currentRoute: '/contact'
+  });
 });
 
 module.exports = router;
