@@ -43,10 +43,10 @@ router.get('/post/:id', async (req, res) => {
   
     const locals = {
         title: data.title,
-        description: "Simple Blog created with NodeJs, Express & MongoDb.",
-        currentRoute: `/post/&{slug}`
+        description: "Simple Blog created with NodeJs, Express & MongoDb."
+        
     }
-    res.render('post', { locals, data });
+    res.render('post', { locals, data, currentRoute: `/post/&{slug}` });
   } catch (error) {
     console.log(error);
   }
@@ -84,8 +84,10 @@ router.post('/search', async (req, res) => {
 
 
 router.get('/about',(req,res) => {    // this is how to add new routes
-    res.render('about');
-    currentRoute: '/about'
+    res.render('about', {
+      currentRoute: '/about'
+    });
+    
 });
 
 module.exports = router;
