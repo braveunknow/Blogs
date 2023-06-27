@@ -5,7 +5,7 @@
 <section class="articles">
     <% data.forEach(post => { %>        
         <li>
-            <a href="/post/<%= post._id %>">
+            <a href="/post/<%= post._id %>" class="<%= isActiveRoute('/search', currentRoute) %>">
                 <span><%= post.title %></span>
                 <span class="article-list__data"><%= post.createdAt.toDateString()%></span>
             </a>

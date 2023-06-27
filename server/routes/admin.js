@@ -236,11 +236,28 @@ router.delete('/delete-post/:id', authMiddleware, async (req, res) => {
   }
 });
 
+//get method
+//admin registration]
+router.get('/register-admin', authMiddleware, async (req, res) => {
+  
+  try {
+    const locals = {
+      title: "New Registration",
+      description: "New admin registration"
+    }
+    res.render('admin/register', {layout:adminLayout, locals})
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+
 // get method
 //admin logout
 router.get('/logout', async (req, res) => {
   res.clearCookie('token');
   res.redirect('/');
+
 });
 
 

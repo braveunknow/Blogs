@@ -312,6 +312,11 @@ img {
   padding: 10px 0;
 }
 
+.new-register-btn{
+
+  padding-left: 100px;
+}
+
 /* SeachBar */
 .searchBar {
   visibility: hidden;
